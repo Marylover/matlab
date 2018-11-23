@@ -1,7 +1,7 @@
 function [] = xcorrAndPlot(y,F)
 %计算函数自相关并绘图
 %信号自相关
-fs = 10*F;
+fs = 64*F;
 [Rx,maxlags]=xcorr(y,'unbiased');  %信号的自相关
 plot(maxlags/fs,Rx/max(Rx));
 xlabel('时延差/s');

@@ -10,6 +10,7 @@ end
 plot(t,x);
 xlim([0,1/F*10]);
 ylim([-60,60]);
+set(gca,'YTick', [-60 :10 :60])
 
 if key == 0
 title([str,' ','Ê±ÓòÎ´ÂË²¨²¨ĞÎ'])
