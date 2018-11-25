@@ -1,3 +1,4 @@
+%create by ICTBeginner 2018 11 20
 function [] = conjAndPlot(y,F)
 %输入一个函数，计算它的功率谱并绘图
 N = 50000;

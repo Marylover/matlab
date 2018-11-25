@@ -1,3 +1,5 @@
+%create by ICTBeginner 2018 11 20
+%Ö÷³ÌÐò
 R = 100;
 C = 1e-7;
 a = R*C;

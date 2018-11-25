@@ -1,3 +1,4 @@
+%create by ICTBeginner 2018 11 20
 function[] = fftAndPlot( y,F )
 %对输入信号进行fft并画出它的频谱
 N = 50000;

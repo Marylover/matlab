@@ -1,3 +1,4 @@
+%create by ICTBeginner 2018 11 20
 function [  ] = myPlot( num,t,x,F,str,key)
 %画出输入信号的时域，频域波形
 %num: 图形序号 t: 时间序列 x : 幅值序列 
