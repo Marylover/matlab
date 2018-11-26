@@ -1,3 +1,4 @@
+%created by ICTBeginner 2018 11 20
 function [] = xcorrAndPlot(y,F)
 %计算函数自相关并绘图
 %信号自相关

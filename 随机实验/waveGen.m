@@ -1,3 +1,4 @@
+%created by ICTBeginner 2018 11 20
 function [y,t] = waveGen(F,type)
 %生成给定频率的波形
 %F,频率;type = 0,正弦波;type = 1 方波; 
