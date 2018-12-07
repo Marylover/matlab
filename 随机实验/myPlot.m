@@ -11,6 +11,8 @@ end
 plot(t,x);
 xlim([0,1/F*10]);
 ylim([-60,60]);
+xlabel('Ê±¼ä/s');
+ylabel('·ùÖµ/V')
 set(gca,'YTick', [-60 :10 :60])
 
 if key == 0
