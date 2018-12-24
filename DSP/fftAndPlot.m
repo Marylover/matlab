@@ -8,6 +8,7 @@ freq_d=abs(fftshift(freq));
 w=(-N/2:1:N/2-1)*fs/N; %Ë«±ß  
 plot(w,freq_d);
 xlabel('ÆµÂÊ/Hz');
+xlim([0,1000]);
 ylabel('·ùÖµ/V');
 end
 

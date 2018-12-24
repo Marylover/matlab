@@ -64,6 +64,6 @@ Wn=[10/24000,300/24000];
    plot(w/pi,Hx);
    title('离散系统相频特性曲线');
    wavs=filter(B,A,y);
-   sound(wavs,fs)
+   %sound(wavs,fs)
  %%%%%%%%%%%%%%%%% 
  
