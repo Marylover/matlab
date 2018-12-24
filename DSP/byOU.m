@@ -1,0 +1,69 @@
+hflie='syd.m4a';
+[y,fs]=audioread(hflie);
+wavfft=fft(y);
+wavfftsh=fftshift(wavfft);
+plot(y)
+title('原始语音信号时域波形图');
+figure(2)
+plot(wavfft)
+title('原始语音信号傅里叶变换图');
+figure(3)
+plot(wavfftsh);
+figure(4)
+plot(abs(wavfftsh))
+title('原始语音信号的频谱图')
+xlabel('频率（hz）');
+%%%%%%%%%%%%%%%%
+%{
+%加入噪声
+n=length(y);
+t=0:1/fs:(n-1)/fs;
+noise=80000000*sin(2*pi*fs*t);
+figure(7);
+plot(noise);
+title('噪声信号');
+sound(noise,fs);
+noifft=fft(noise);
+figure(8);
+plot(noifft);
+title('噪声信号傅里叶变换');
+noifftsh=fftshift(noifft);
+figure(9);
+plot(abs(noifftsh));
+title('噪声信号频域分析');
+%噪声与信号混叠
+n2=length(noise);
+wavch=[noise',zeros(n2,1)];
+wavbo=wavch+y;
+sound(wavbo,fs);
+figure(9);
+plot(wavbo);
+title('叠加信号');
+wavbofft=fft(wavbo,n);
+figure(10);
+plot(wavbofft);
+title('混合信号傅里叶分析')；
+wavbofftshift=(wavbofft);
+figure(11);
+plot(abs(wavbofftshift));
+title('混合信号频谱分析');
+%}
+%巴特沃斯数字带通滤波器设计
+%通频带为100-400hz，Fs=48000hz,如下设置8阶带通滤波器
+%双线性变化法设计带通滤波器
+Wn=[10/24000,300/24000];
+[B,A]=butter(4,Wn);
+%下面是数字滤波器响应特性的检查
+   [H,w]=freqz(B,A,512,'whole');
+   Hf=abs(H);
+   Hx=angle(H);
+   figure(5)
+   plot(w/pi,Hf);
+   title('离散系统幅频特性曲线');
+   figure(6)
+   plot(w/pi,Hx);
+   title('离散系统相频特性曲线');
+   wavs=filter(B,A,y);
+   sound(wavs,fs)
+ %%%%%%%%%%%%%%%%% 
+ 
